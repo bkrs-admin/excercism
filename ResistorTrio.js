@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.decodedResistorValue = decodedResistorValue;
 function decodedResistorValue(code) {
-    var COLOR_MAP = {
+    const COLOR_MAP = {
         'black': 0,
         'brown': 1,
         'red': 2,
@@ -14,18 +14,18 @@ function decodedResistorValue(code) {
         'grey': 8,
         'white': 9,
     };
-    var firstDigit = COLOR_MAP[code[0]];
-    var secondDigit = COLOR_MAP[code[1]];
-    var multiplier = COLOR_MAP[code[2]];
-    var value = (firstDigit * 10 + secondDigit) * Math.pow(10, multiplier);
+    const firstDigit = COLOR_MAP[code[0]];
+    const secondDigit = COLOR_MAP[code[1]];
+    const multiplier = COLOR_MAP[code[2]];
+    let value = (firstDigit * 10 + secondDigit) * Math.pow(10, multiplier);
     if (value >= 1000000000) {
-        return "".concat(value / 1000000000, " gigaohms");
+        return `${value / 1000000000} gigaohms`;
     }
     if (value >= 1000000) {
-        return "".concat(value / 1000000, " megaohms");
+        return `${value / 1000000} megaohms`;
     }
     if (value >= 1000) {
-        return "".concat(value / 1000, " kiloohms");
+        return `${value / 1000} kiloohms`;
     }
-    return "".concat(value, " ohms");
+    return `${value} ohms`;
 }

@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.isLeap = isLeap;
 function isLeap(year) {
-    var isLeap = false;
+    let isLeap = false;
     if (year % 4 == 0 && year % 400 == 0) {
         isLeap = true;
     }

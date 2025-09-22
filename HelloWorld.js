@@ -2,5 +2,5 @@
 function hello() {
     return 'Hello, World!';
 }
-var a = hello();
+let a = hello();
 console.log(a);

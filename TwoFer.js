@@ -14,5 +14,5 @@ function twoFer(name) {
     if (!name) {
         name = "you";
     }
-    return "One for ".concat(name, ", one for me.");
+    return `One for ${name}, one for me.`;
 }
