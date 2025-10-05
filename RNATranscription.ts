@@ -1,30 +1,24 @@
-export function toRna(word: string): string {
+export function toRna(DNA: string) {
+  let dnaSequence: string[] = ["G", "C", "T", "A"]
   
-  const mySet = new Set<string>();
-  mySet.add("C")
-  mySet.add("G")
-  mySet.add("A")
-  mySet.add("T")
+  let rnaComplement: string = "";
   
-  let result:string = "";
-  
-  for(let i = 0; i < word.length; i++){
-    if (!mySet.has(word[i])){
+  for(let i = 0; i < DNA.length; i++){
+    
+    if (!dnaSequence.includes(DNA[i])){
       throw new Error("Invalid input DNA.")
     }
-  }
-
-  for(let i = 0; i < word.length; i++){
-    if (word[i] == "C") {
-      result = result + "G"
-    } else if (word[i] == "G"){
-      result = result + "C"
-    } else if (word[i] == "A"){
-      result = result + "U"
-    } else if (word[i] == "T"){
-      result = result + "A"
-    }   
+    
+    if (DNA[i] == 'G'){
+      rnaComplement += 'C'
+    } else if (DNA[i] == 'C') {
+      rnaComplement += 'G'
+    } else if (DNA[i] == 'T') {
+      rnaComplement += 'A'
+    } else if (DNA[i] == 'A') {
+      rnaComplement += 'U'
+    }
   }
   
-  return result; 
+  return rnaComplement; 
 }
